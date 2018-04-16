@@ -1,1 +1,67 @@
-Hello World
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Assistant</title>
+    <link href="/static/images/icon.png" rel="icon" sizes="96x96" type="image/png">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700%7CProduct+Sans:400">
+</head>
+
+<body>
+    <section>
+        <div class="header">
+            <img decoding="async" src="/static/images/pixel-terra.png" width="300px">
+
+            <h1 class="title">Terra Horóscopo
+                <span>No Google Assistant</span></h1>
+        </div>
+    </section>
+    <section class="conversation">
+        <div>
+            <div id="phone">
+                    <div class="screen">
+                        <div class="dialog dialog-bot">
+                            <div class="icon"></div>
+                            <div class="bubble">Hey, você voltou! Se bem me lembro seu signo é Gêmeos. Quer ver a previsão do horóscopo de hoje?</div>
+                        </div>
+
+                        <div class="dialog dialog-user sec-1">
+                            <div class="bubble">Olá</div>
+                        </div>
+
+                        <div class="dialog dialog-bot sec-2">
+                            <div class="icon"></div>
+                            <div class="bubble">Humm, não entendi.</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="text">
+            <h2 class="wow">Fale com o Terra Horóscopo</h2>
+        </div>
+    </section>
+    <section>
+
+    </section>
+    <footer> </footer>
+
+    <script>
+        (function () {
+            var body = window.document.body;
+            var box = document.getElementById('phone');
+
+            var handleScroll = function () {
+                var t = body.scrollTop / (body.scrollHeight - window.innerHeight);
+
+                box.style.animationDelay = -t + 's';
+                // console.log(t);
+            };
+            window.addEventListener('scroll', handleScroll, false);
+
+        }());
+
+    </script>
+</body>
+</html>
