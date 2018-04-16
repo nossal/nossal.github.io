@@ -287,6 +287,18 @@ h2.wow {
     text-align: center
 }
 
+
+.header img, .header .title {
+    opacity: 0;
+    animation-duration: .4s;
+    animation-name: intro;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.header .title {
+    animation-delay: 300ms
+
+}
 .conversation {
     display: flex;
     background: #fbfbfb
@@ -304,6 +316,7 @@ h2.wow {
     background-position: bottom, left -120px;
     background-size: cover;
     position: relative;
+    margin: auto;
 }
 #phone .screen {
     /* border: 1px solid red; */
@@ -363,6 +376,18 @@ h2.wow {
     animation-name: slidein;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
+}
+
+@keyframes intro {
+    from {
+        transform: translateY(70px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slidein {
