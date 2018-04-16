@@ -446,4 +446,20 @@ ul.features {
         font-size: 1.6em;
         font-weight: 300;
     }
+    #mi-angle {
+        width: 380px;
+        height: 176px;
+    }
+}
+@media(max-width:375px) {
+    #mi-angle {
+        width: 320px;
+        height: 148px;
+    }
+}
+@media(max-width:360px) {
+    #mi-angle {
+        width: 250px;
+        height: 116px;
+    }
 }
