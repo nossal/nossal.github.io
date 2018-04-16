@@ -287,7 +287,6 @@ h2.wow {
     text-align: center
 }
 
-
 .header img, .header .title {
     opacity: 0;
     animation-duration: .4s;
@@ -297,8 +296,18 @@ h2.wow {
 }
 .header .title {
     animation-delay: 300ms
-
 }
+
+.call {
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+ul.features {
+    list-style: none;
+}
+
+
 .conversation {
     display: flex;
     background: #fbfbfb
@@ -326,8 +335,8 @@ h2.wow {
     top: 95px;
     position: absolute;
     height: 410px;
-    width: 265px;
-    left: 15px;
+    width: 264px;
+    left: 16px;
     overflow: hidden;
 }
 
