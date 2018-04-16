@@ -432,6 +432,11 @@ ul.features {
     footer {
         margin-top: 1em
     }
+    
+    #mi-angle {
+        width: 600px;
+        height: 279px;
+    }
 }
 
 @media(max-width:415px) {
