@@ -11,6 +11,12 @@ body {
     min-height: 100vh
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
 section {
     background: #fff;
     padding: 5em;
@@ -65,11 +71,6 @@ h2.wow {
     font-size: 1.5em;
 }
 
-ul.features {
-    list-style: none;
-}
-
-
 #conversation {
     display: flex;
     background: #fbfbfb
@@ -77,9 +78,9 @@ ul.features {
 #conversation>div {
     flex-grow: 1;
 }
-/* .conversation>div.text {
+.conversation>div.side {
     flex-grow: 3;
-} */
+} 
 #phone {
     width: 300px;
     height: 700px;
@@ -89,19 +90,30 @@ ul.features {
     position: relative;
     margin: auto;
 }
-#phone .screen {
-    /* border: 1px solid red; */
+
+.preview {
+    display: block;
+    max-width: 250px;
+    font-size: 0.9em;
+}
+
+.screen {
+    position: relative;
+    overflow: hidden;
     background: #fff;
     display: flex;
     flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 0px 0px 10px 0px
+}
+
+#phone .screen {
+    border: none;
     top: 95px;
-    position: absolute;
     height: 410px;
     width: 264px;
     left: 16px;
-    overflow: hidden;
 }
-
 
 .dialog {
     display: flex;
@@ -154,9 +166,22 @@ ul.features {
     animation-fill-mode: forwards;
 }
 
-.animated {
-    border: 1px solid red;
+footer {
+    background: #a3a5a9
 }
+
+footer ul.menu {
+    border: 1px solid;
+    margin: auto;
+}
+
+footer ul.menu li {
+    background: #fff;
+}
+footer ul.menu li.divider {
+    background: #fff;
+}
+
 @keyframes intro {
     from {
         transform: translateY(70px);

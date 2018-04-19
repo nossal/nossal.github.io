@@ -43,15 +43,40 @@
                     </div>
                 </div>
         </div>
-        <div class="text">
+        <div class="side">
             <h2 class="wow">Fale com o Terra Horóscopo</h2>
             <p class="call">Saiba as previsões do seu signo!</p>
-            <ul class="features">
-                <li>Diário</li>
-                <li>Semanal</li>
-                <li>Do Amor</li>
-            </ul>
+            
+            <h2>Semanal</h2>
+            <div class="preview">
+                <div class="screen">
+                    <div class="dialog dialog-user sec-1">
+                        <div class="bubble">Olá</div>
+                    </div>
+
+                    <div class="dialog dialog-bot sec-2">
+                        <div class="icon"></div>
+                        <div class="bubble">Humm, não entendi.</div>
+                    </div>                    
+                </div>
+            </div>
+            <hr>
+            <h2>Amor</h2>
+            <div class="preview">
+                <div class="screen">
+                    <div class="dialog dialog-user sec-1">
+                        <div class="bubble">Olá</div>
+                    </div>
+    
+                    <div class="dialog dialog-bot sec-2">
+                        <div class="icon"></div>
+                        <div class="bubble">Humm, não entendi.</div>
+                    </div>                    
+                </div>
+            </div>
+
         </div>
+
     </section>
     <section>
         <div class="text">
@@ -66,7 +91,22 @@
         </div>
     </section>
 
-    <footer> </footer>
+    <footer> 
+        <ul class="menu">
+            <li>Personalização</li>
+            <li>Offline</li>
+            <li>PWA</li>
+            <li class="divider"></li>
+            <li>Push Notifications</li>
+            <li>HTTPS Segurança</li>
+            <li>AMP Stories</li>
+            <li class="divider"></li>
+            <li>Performance</li>
+            <li>Nightmode</li>
+            <li>Assistant</li>
+        </ul>
+
+    </footer>
 
     <script>
         (function () {
@@ -76,40 +116,18 @@
             function isElementInViewport(el) {
                 var rect = el.getBoundingClientRect()
 
-                //var viewportTop = body.scrollTop
-                //var viewportBottom = body.scrollTop + window.innerHeight
+                var v_t = (body.scrollTop + window.innerHeight) - (rect.top + body.scrollTop)
+                var v_b = (rect.bottom + body.scrollTop)- body.scrollTop
+                var vv = rect.height * 0.3
 
-                //(window.innerHeight - rect.top) - (body.scrollTop + window.innerHeight)
-                var v = ((body.scrollTop + window.innerHeight) - (window.innerHeight - rect.top)) / rect.height
-
-                var v_t = (window.innerHeight - rect.top)
-                var v_b = (window.innerHeight - rect.bottom)
-                //console.log(v_t, v_b)
-                //console.log('----------------')
-                console.log(v)
-                return v > 1
-
-                //return (
-                //    rect.top >= 0 &&
-                //    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-                //)
+                return v_t > vv && v_b > vv
             }
 
             var handleScroll = function () {
-                var t = body.scrollTop / (body.scrollHeight - window.innerHeight)
-
-
-                var i = 0//sections.length
-                //while (i--) {
-                  //  console.log('>>>>', i)
-                    if (isElementInViewport(sections[i])) {
-                        sections[i].classList = 'animated'
-                    } else {
-                        sections[i].classList = []
-                    }
-                //}
-                // box.style.animationDelay = -t + 's';
-                // console.log(t);
+                var i = sections.length
+                while (i--) {
+                    sections[i].classList = isElementInViewport(sections[i]) ? 'animated' : []
+                }
             }
             window.addEventListener('scroll', handleScroll, false)
         }())
