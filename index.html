@@ -20,10 +20,10 @@
     </section>
     <section>
         <h2 class="wow">Conheça</h2>
-        <p>O Terra está presente no Google Assistant com seu app de horóscopo, o Terra Horóscopo.</p>
+        <p>O Terra está presente no Google Assistant com seu app de horóscopo, o <a href="https://assistant.google.com/services/a/uid/000000fec05c0310?hl=pt-BR">Terra Horóscopo</a>.</p>
         <img decoding="async" src="/static/images/mi-angle.png" width="800px" height="372px" id="mi-angle">
     </section>
-    <section class="conversation">
+    <section id="conversation">
         <div>
             <div id="phone">
                     <div class="screen">
@@ -70,18 +70,49 @@
 
     <script>
         (function () {
-            var body = window.document.body;
-            var box = document.getElementById('phone');
+            var body = window.document.body
+            var sections = document.querySelectorAll('body>section')
+
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect()
+
+                //var viewportTop = body.scrollTop
+                //var viewportBottom = body.scrollTop + window.innerHeight
+
+                //(window.innerHeight - rect.top) - (body.scrollTop + window.innerHeight)
+                var v = ((body.scrollTop + window.innerHeight) - (window.innerHeight - rect.top)) / rect.height
+
+                var v_t = (window.innerHeight - rect.top)
+                var v_b = (window.innerHeight - rect.bottom)
+                //console.log(v_t, v_b)
+                //console.log('----------------')
+                console.log(v)
+                return v > 1
+
+                //return (
+                //    rect.top >= 0 &&
+                //    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                //)
+            }
 
             var handleScroll = function () {
-                var t = body.scrollTop / (body.scrollHeight - window.innerHeight);
+                var t = body.scrollTop / (body.scrollHeight - window.innerHeight)
 
+
+                var i = 0//sections.length
+                //while (i--) {
+                  //  console.log('>>>>', i)
+                    if (isElementInViewport(sections[i])) {
+                        sections[i].classList = 'animated'
+                    } else {
+                        sections[i].classList = []
+                    }
+                //}
                 // box.style.animationDelay = -t + 's';
                 // console.log(t);
-            };
-            window.addEventListener('scroll', handleScroll, false);
-
-        }());
+            }
+            window.addEventListener('scroll', handleScroll, false)
+        }())
 
     </script>
 </body>
