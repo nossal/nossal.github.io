@@ -84,6 +84,7 @@ h2.wow {
 .call {
     font-weight: 100;
     font-size: 1.5em;
+    margin-top: 1em;
 }
 .center {
     text-align: center
@@ -123,6 +124,7 @@ h2.wow {
     border-radius: 1em;
     font-size: 0.9em;
     text-align: left;
+    margin-bottom: 1.5em;
 }
 
 #conversation {
@@ -132,9 +134,7 @@ h2.wow {
 #conversation>div {
     flex-grow: 1;
 }
-.conversation>div.side {
-    flex-grow: 3;
-}
+
 
 #phone {
     width: 300px;
@@ -253,11 +253,19 @@ img.angle {
 
 footer {
     background: #8f9399;
-    color: #fff
+    color: #fff;
+    padding: 3em 1em;
+
 }
 
 footer ul.menu {
     margin: auto;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 0.09em;
+    columns: 3;
+    max-width: 800px;
 }
 
 footer ul.menu li {
@@ -321,7 +329,7 @@ footer ul.menu li.divider {
         padding-bottom: 2.5em
     }
     #conversation {
-        flex-direction: column-reverse
+        flex-direction: column-reverse;
     }
     h2.wow {
         font-size: 1.6em;
@@ -331,6 +339,13 @@ footer ul.menu li.divider {
         width: 380px;
         height: 176px;
     }
+    footer ul.menu {
+        columns: 2;
+    }
+    .know {
+        flex-flow: column;
+    }
+    
 }
 @media(max-width:375px) {
     #mi-angle {
