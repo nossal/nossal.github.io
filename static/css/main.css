@@ -112,7 +112,12 @@ h2.wow {
 img.angle {
     transform: translateY(-818px) perspective(1250) rotateX(65deg) rotateZ(41deg);
 }
-
+.redmi {
+    transform: translateY(100px);
+}
+.redmi img {
+    transform: translate(400px, -200px)
+}
 .preview {
     display: block;
     max-width: 250px;
