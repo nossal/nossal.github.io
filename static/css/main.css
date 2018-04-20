@@ -86,7 +86,7 @@ h2.wow {
 }
 .conversation>div.side {
     flex-grow: 3;
-} 
+}
 #phone {
     width: 300px;
     height: 700px;
@@ -165,7 +165,7 @@ h2.wow {
     animation-delay: .5s;
     opacity: 0;
 }
-.animated .sec-1, .animated .sec-2 {
+.visible .sec-1, .visible .sec-2 {
     animation-duration: .6s;
     animation-name: slidein;
     animation-timing-function: cubic-bezier(0.21, 1.03, 0.82, 0.98);

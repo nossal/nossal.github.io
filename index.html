@@ -21,12 +21,12 @@
     <section>
         <h2 class="wow">Conheça</h2>
         <p>O Terra está presente no Google Assistant com seu app de horóscopo, o <a href="https://assistant.google.com/services/a/uid/000000fec05c0310?hl=pt-BR">Terra Horóscopo</a>.</p>
-        <img decoding="async" src="/static/images/mi-angle.png" width="800px" height="372px" id="mi-angle">
+        <video src="/static/videos/video_low.mp4"></video>
     </section>
     <section id="conversation">
         <div>
             <div id="phone">
-                <div class="screen">                        
+                <div class="screen">
                     <div class="dialog dialog-user">
                         <div class="bubble">Previsão de Gêmeos para hoje</div>
                     </div>
@@ -46,7 +46,7 @@
         <div class="side">
             <h2 class="wow">Fale com o Terra Horóscopo</h2>
             <p class="call">Saiba as previsões do seu signo!</p>
-            
+
             <h2>Semanal</h2>
             <div class="preview">
                 <div class="screen">
@@ -57,7 +57,7 @@
                     <div class="dialog dialog-bot sec-2">
                         <div class="icon"></div>
                         <div class="bubble">Humm, não entendi.</div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
             <hr>
@@ -67,11 +67,11 @@
                     <div class="dialog dialog-user sec-1">
                         <div class="bubble">Previsão amorosa</div>
                     </div>
-    
+
                     <div class="dialog dialog-bot sec-2">
                         <div class="icon"></div>
                         <div class="bubble">Humm, não entendi.</div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
             <p class="call">Volte quando quiser e já não perguntamos seu signo de novo…</p>
         </div>
         <div id="phone">
-            <div class="screen">                        
+            <div class="screen">
                 <div class="dialog dialog-bot">
                     <div class="icon"></div>
                     <div class="bubble">Hey, você voltou! Se bem me lembro seu signo é Gêmeos. Quer ver a previsão do horóscopo de hoje?</div>
@@ -103,10 +103,11 @@
         <div class="side">
             <h2 class="wow">Muito mais no Terra</h2>
             <p class="call">Aproveite e conheça o site do Terra!</p>
+            <img decoding="async" src="/static/images/mi-angle.png" width="800px" height="372px" id="mi-angle">
         </div>
     </section>
 
-    <footer> 
+    <footer>
         <ul class="menu">
             <li>Personalização</li>
             <li>Offline</li>
@@ -128,7 +129,7 @@
             var body = window.document.body
             var sections = document.querySelectorAll('body>section')
 
-            function isElementInViewport(el) {
+            function isVisible(el) {
                 var rect = el.getBoundingClientRect()
 
                 var v_t = (body.scrollTop + window.innerHeight) - (rect.top + body.scrollTop)
@@ -141,7 +142,7 @@
             var handleScroll = function () {
                 var i = sections.length
                 while (i--) {
-                    sections[i].classList = isElementInViewport(sections[i]) ? 'animated' : []
+                    sections[i].classList = isVisible(sections[i]) ? 'visible' : []
                 }
             }
             window.addEventListener('scroll', handleScroll, false)
