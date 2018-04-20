@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
-    <title>Assistant</title>
+    <title>Assistente</title>
     <link href="/static/images/icon.png" rel="icon" sizes="96x96" type="image/png">
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700%7CProduct+Sans:400">
@@ -20,25 +20,30 @@
     </section>
     <section>
         <h2 class="wow">Conheça</h2>
-        <p>O Terra está presente no Google Assistant com seu app de horóscopo, o <a href="https://assistant.google.com/services/a/uid/000000fec05c0310?hl=pt-BR">Terra Horóscopo</a>.</p>
-
-
-
-
-        <p>Caso você não tenha o Google Assistente instalado vá na loja do
-            <a href="https://itunes.apple.com/br/app/google-assistente/id1220976145?mt=8">iTunes Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.googleassistant&hl=pt_BR">Play Store</a>
-        </p>
-
-
-        <div class="redmi">
-            <img src="/static/images/redmi.png" alt="">
-            <video src="/static/videos/video_low.mp4" loop autoplay></video>
+        <p class="call">O Terra está presente no Google Assistente com seu App de horóscopo, o <a href="https://assistant.google.com/services/a/uid/000000fec05c0310?hl=pt-BR">Terra Horóscopo</a>.</p>
+        <div class="know">
+            <div class="step">
+                <p>Iniciar o Google Assistente é muito fácil. Se o Assistente estiver instalado no seu smartphone Android basta master o botão home pressionado.</p>
+                <p>Se você tem mum iPhone ou seu Android não tem o Assistente instaldo baixe na da sua loja de aplicativos.
+                    <a href="https://itunes.apple.com/br/app/google-assistente/id1220976145?mt=8">
+                        <img decoding="async" src="/static/images/app-store-badge.png" width="150px" height="44px">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.googleassistant&hl=pt_BR">
+                        <img decoding="async" src="/static/images/google-play-badge.png" width="150px" height="45px">
+                    </a>
+                </p>
+            </div>
+            <div class="step">STEP 2</div>
+            <div class="step">
+                <div class="redmi">
+                    <video src="/static/videos/video_low.mp4" loop autoplay></video>
+                </div>
+            </div>
         </div>
     </section>
     <section id="conversation">
         <div>
-            <div id="phone">
+            <div id="phone" class="phone">
                 <div class="screen">
                     <div class="dialog dialog-user">
                         <div class="bubble">Previsão de Gêmeos para hoje</div>
@@ -97,7 +102,7 @@
             <p class="call">Volte quando quiser e já não perguntamos seu signo de novo…</p>
         </div>
         <div id="phone" class="phone">
-            <div class="screen">                        
+            <div class="screen">
                 <div class="dialog dialog-bot">
                     <div class="icon"></div>
                     <div class="bubble">Hey, você voltou! Se bem me lembro seu signo é Gêmeos. Quer ver a previsão do horóscopo de hoje?</div>
@@ -119,9 +124,9 @@
 
             <img decoding="async" src="/static/images/mi-angle.png" width="800px" height="372px" id="mi-angle">
 
-            <div class="phone angle">
+            <!-- <div class="phone angle">
             </div>
-            <img src="/static/images/horoscope-page.png" alt="page" class="angle">
+            <img src="/static/images/horoscope-page.png" alt="page" class="angle"> -->
 
         </div>
     </section>

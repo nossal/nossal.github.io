@@ -77,6 +77,17 @@ h2.wow {
     font-size: 1.5em;
 }
 
+.know {
+    display: flex;
+    flex-flow: row;
+    align-content: space-between;
+    margin-top: 3em;
+}
+.know .step {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
 #conversation {
     display: flex;
     background: #fbfbfb
@@ -87,6 +98,7 @@ h2.wow {
 .conversation>div.side {
     flex-grow: 3;
 }
+
 #phone {
     width: 300px;
     height: 700px;
@@ -98,8 +110,6 @@ h2.wow {
     background-size: cover;
     position: relative;
     margin: auto;
-    z-index: 20;
-    ) 
 }
 
 .phone.angle {
@@ -109,14 +119,25 @@ h2.wow {
     height: 370px;
     z-index: 10;
 }
+
 img.angle {
-    transform: translateY(-818px) perspective(1250) rotateX(65deg) rotateZ(41deg);
+    transform: translateX(-20px) translateY(-818px) rotateY(8deg) rotateX(73deg) rotateZ(40deg);
 }
 .redmi {
-    transform: translateY(100px);
+    /* transform: translateY(100px); */
+    background-image: url('/static/images/redmi.png');
+    display: block;
+    width: 300px;
+    height: 550px;
+    margin: auto;
+}
+.redmi video {
+    width: 235px;
+    transform: translate(1px, 60px);
 }
 .redmi img {
-    transform: translate(400px, -200px)
+    /* transform: translate(400px, -200px) */
+
 }
 .preview {
     display: block;
