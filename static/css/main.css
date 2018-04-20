@@ -96,7 +96,12 @@ h2.wow {
     position: relative;
     margin: auto;
 }
-
+.redmi {
+    transform: translateY(100px);
+}
+.redmi img {
+    transform: translate(400px, -200px)
+}
 .preview {
     display: block;
     max-width: 250px;
