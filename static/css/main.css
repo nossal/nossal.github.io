@@ -339,6 +339,16 @@ footer ul.menu li.divider {
         width: 380px;
         height: 176px;
     }
+    .step {
+        margin-right: 0 !important
+    }
+    .middle {
+        margin: 0em;
+        margin-top: 2em
+    }
+    .end {
+        margin-left: 0
+    }
     footer ul.menu {
         columns: 2;
     }
