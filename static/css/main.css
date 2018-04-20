@@ -170,6 +170,7 @@ img.angle {
 }
 .redmi video {
     width: 235px;
+    height: 417px;
     transform: translate(1px, 60px);
 }
 .redmi img {
