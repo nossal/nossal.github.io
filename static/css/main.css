@@ -46,10 +46,12 @@ h1 {
 
 h3 {
     text-transform: uppercase;
-    font-weight: 100;
-    color: #808080;
+    font-weight: 800;
+    color: #5d5d5d;
     text-align: center;
-    margin-bottom: 1em
+    margin-bottom: 2em;
+    letter-spacing: 0.05em;
+    word-spacing: 0.5em;
 }
 
 h1.title {
@@ -151,7 +153,7 @@ h2.wow {
 
 .phone.angle {
     background-image: url('/static/images/mi-angle-2.png');
-    perspective(1250); 
+    perspective(1250);
     width: 800px;
     height: 370px;
     z-index: 10;
@@ -189,7 +191,7 @@ img.angle {
     background: #fff;
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
+    border: 1px solid #eaeaea;
     padding: 0px 0px 10px 0px
 }
 
@@ -259,6 +261,15 @@ footer {
 
 }
 
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #ccc
+}
+
 footer ul.menu {
     margin: auto;
     font-weight: 100;
@@ -270,7 +281,7 @@ footer ul.menu {
 }
 
 footer ul.menu li {
-    
+
 }
 footer ul.menu li.divider {
     background: #fff;
@@ -299,6 +310,7 @@ footer ul.menu li.divider {
         opacity: 1;
     }
 }
+
 
 @media(max-width:736px) {
     .text {
@@ -356,7 +368,7 @@ footer ul.menu li.divider {
     .know {
         flex-flow: column;
     }
-    
+
 }
 @media(max-width:375px) {
     #mi-angle {
