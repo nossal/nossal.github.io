@@ -184,6 +184,18 @@ h2.wow {
     transform: translateY(0.2em);
 }
 
+.prediction {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    /* place-content: end ; */
+    margin-top: 1em;
+}
+.prediction .text {
+    padding-left: 2em;
+    text-align: left;
+}
+
 section.even {
     background: #fbfbfb;
 }
@@ -248,7 +260,8 @@ img.angle {
 }
 .preview {
     display: block;
-    max-width: 250px;
+    width: 250px;
+    flex-shrink: 0;
 }
 
 .screen {
@@ -257,7 +270,7 @@ img.angle {
     position: relative;
     overflow: hidden;
     background: #fff;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     border: 1px solid #eaeaea;
     padding: 0px 0px 10px 0px
