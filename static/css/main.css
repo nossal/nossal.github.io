@@ -17,7 +17,7 @@ a:hover {
 hr {
     border-top: 1px solid #efefef;
     margin: 6em;
-    margin-top: 4em;
+    margin-top: 3em;
     margin-bottom: 2em;
 }
 
@@ -358,16 +358,24 @@ img.angle {
 }
 
 
-.sec-2 {
-    animation-delay: 1.5s;
+.anim {
     transform: translateY(600px);
     opacity: 0;
 }
-.sec-1 {
-    animation-delay: .5s;
-    opacity: 0;
-}
-.visible .sec-1, .visible .sec-2 {
+
+.seq-1 { animation-delay: 0.5s }
+.seq-1-5 { animation-delay: 0.8s }
+.seq-2 { animation-delay: 1.5s }
+.seq-3 { animation-delay: 1.8s }
+.seq-4 { animation-delay: 2.3s }
+
+
+.visible .seq-1,
+.visible .seq-1-5,
+.visible .seq-2,
+.visible .seq-3,
+.visible .seq-4 {
+    opacity: 1;
     animation-duration: .6s;
     animation-name: slidein;
     animation-timing-function: cubic-bezier(0.21, 1.03, 0.82, 0.98);

@@ -50,7 +50,7 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <a href="" class="replay">replay</a>
+                <a href="javascript:restartVideo()" class="replay">replay</a>
             </div>
         </div>
     </section>
@@ -63,7 +63,7 @@
                             <div class="bubble">Horóscopo de hoje para Áries</div>
                         </div>
 
-                        <div class="dialog dialog-bot sec-1">
+                        <div class="dialog dialog-bot anim seq-1">
                             <div class="bubble">Aqui está a previsão de hoje</div>
                             <div class="card">
                                 <div class="image">
@@ -88,11 +88,11 @@
                     <div class="text"><p>Toda semana você pode voltar e perguntar para o Terra Horóscopo a previsão semanal do seu signo.</p> </div>
                     <div class="preview">
                         <div class="screen">
-                            <div class="dialog dialog-user sec-1">
+                            <div class="dialog dialog-user anim seq-1-5">
                                 <div class="bubble">Previsão para a semana</div>
                             </div>
 
-                            <div class="dialog dialog-bot sec-2">
+                            <div class="dialog dialog-bot anim seq-2">
                                 <div class="bubble">A previsão para essa semana é:</div>
                             </div>
                         </div>
@@ -105,11 +105,11 @@
                     <div class="text">Curioso para saber o que vai acontecer </div>
                     <div class="preview">
                         <div class="screen">
-                            <div class="dialog dialog-user sec-1">
+                            <div class="dialog dialog-user anim seq-3">
                                 <div class="bubble">Horóscopo do amor</div>
                             </div>
 
-                            <div class="dialog dialog-bot sec-2">
+                            <div class="dialog dialog-bot anim seq-4">
                                 <div class="bubble">O horóscopo do amor para você é:</div>
                             </div>
                         </div>
@@ -129,10 +129,10 @@
                 <div class="dialog dialog-bot">
                     <div class="bubble">Hey, você voltou! Se bem me lembro seu signo é Aquário. Quer ver a previsão do horóscopo de hoje?</div>
                 </div>
-                <div class="dialog dialog-user sec-1">
+                <div class="dialog dialog-user anim seq-1">
                         <div class="bubble">Quero sim</div>
                     </div>
-                <div class="dialog dialog-bot sec-2">
+                <div class="dialog dialog-bot anim seq-2">
                     <div class="bubble">Aqui está a previsão de hoje</div>
                     <div class="card">
                         <div class="image">
@@ -165,8 +165,8 @@
     <footer>
         <ul class="menu">
             <li><a href="/">Personalização</a></li>
-            <li><a href="/">Offline</a></li>
             <li><a href="/">PWA</a></li>
+            <li><a href="/">Offline</a></li>
 
             <li><a href="/">Push Notifications</a></li>
             <li><a href="/">HTTPS Segurança</a></li>
@@ -183,9 +183,23 @@
         (function () {
             var body = window.document.body
             var sections = document.querySelectorAll('body>section')
+            var video = document.querySelectorAll('video')[0]
 
-            function isVisible(el) {
-                var rect = el.getBoundingClientRect()
+            function play() {
+                if (video.paused)
+                    video.play()
+            }
+            function pause() {
+                video.pause()
+            }
+            window.restartVideo = function () {
+                video.pause()
+                video.currentTime = 0
+                video.play()
+            }
+
+            function isVisible(element) {
+                var rect = element.getBoundingClientRect()
 
                 var v_t = (body.scrollTop + window.innerHeight) - (rect.top + body.scrollTop)
                 var v_b = (rect.bottom + body.scrollTop)- body.scrollTop
@@ -194,13 +208,34 @@
                 return v_t > vv && v_b > vv
             }
 
+            function toggleClass(element, className, add) {
+                var contains = element.classList.contains(className)
+
+                if (!contains && add) {
+                    element.classList.add(className)
+                    return true
+                }
+                if (contains && !add) {
+                    element.classList.remove(className)
+                    return true
+                }
+                return false
+            }
+
             var handleScroll = function () {
                 var i = sections.length
                 while (i--) {
                     if (isVisible(sections[i])) {
-                        sections[i].classList.add('visible')
-                    } else
-                        sections[i].classList.remove('visible')
+                        if (toggleClass(sections[i], 'visible', true)) {
+                            if (i == 1)
+                                play()
+                        }
+                    } else {
+                        if (toggleClass(sections[i], 'visible', false)) {
+                            if (i == 1)
+                                pause()
+                        }
+                    }
                 }
             }
             window.addEventListener('scroll', handleScroll, false)
