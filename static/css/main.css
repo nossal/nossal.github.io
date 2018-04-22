@@ -10,6 +10,10 @@ body {
     flex-direction: column;
     min-height: 100vh
 }
+a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid
+}
 hr {
     border-top: 1px solid #efefef;
     margin: 6em;
@@ -88,6 +92,7 @@ h1.title span {
     display: block;
     font-size: 0.5em;
     text-align: right;
+    margin-top: 0.5em;
 }
 
 h2.wow {
@@ -150,6 +155,7 @@ h2.wow {
     color: #929292;
     letter-spacing: 0.05em;
     font-weight: 300;
+    line-height: 1.1em;
     /* font-size: 1em; */
     /* font-size: 0.9em; */
     /* padding: 5px 15px; */
@@ -193,6 +199,13 @@ section.even {
 
 #phone {
     margin-left: 0;
+}
+
+
+a.replay {
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .phone {
@@ -240,6 +253,7 @@ img.angle {
 
 .screen {
     font-size: 0.9em;
+    line-height: 1.1em;
     position: relative;
     overflow: hidden;
     background: #fff;
@@ -262,13 +276,48 @@ img.angle {
 
 .dialog {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
     margin-top: 1em;
     margin-left: 10px;
     margin-right: 10px;
 }
-.dialog-bot .icon {
+.dialog .card {
+    border: 1px solid #edf0ed;
+    margin-top: 1em;
+}
+.dialog .card .text {
+    line-height: 1.1em;
+    padding: 1em 0.7em;
+}
+.dialog .card h2 {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+.dialog .card span {
+    font-size: 0.8em;
+    color: #929292;
+}
+.dialog .card p {
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    line-height: 1.3em;
+}
+
+.dialog .card .image {
+    background: #edf0ed;
+    text-align: center;
+}
+
+.dialog-bot .bubble {
+    margin-left: 3em;
+    border: 1px solid #edf0ed;
+}
+
+.dialog-bot .bubble::before {
+    position: absolute;
+    content: '';
+    transform: translate(-3.8em, -0.35em);
     background-image: url('/static/images/terra.png');
     background-size: cover;
     display: inline-block;
@@ -283,12 +332,13 @@ img.angle {
 }
 
 .dialog-user .bubble {
-    background: #e0e0e0
+    background: #edf0ed
 }
 .dialog .bubble {
+    font-size: 0.9em;
     max-width: 195px;
-    padding: 5px 10px;
-    border: 1px solid #e0e0e0;
+    padding: 6px 12px;
+    /* border: 1px solid #edf0ed; */
     border-radius: 1em;
     display: inline-block;
     vertical-align: middle
