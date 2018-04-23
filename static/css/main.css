@@ -254,10 +254,6 @@ img.angle {
     height: 417px;
     transform: translate(2px, 60px);
 }
-.redmi img {
-    /* transform: translate(400px, -200px) */
-
-}
 .preview {
     display: block;
     width: 250px;
@@ -470,8 +466,29 @@ footer ul.menu li.divider {
         padding: 1em;
         padding-bottom: 2.5em
     }
-    #conversation {
+    .know .step.middle {
+        margin-left: 0;
+        padding-left: 0;
+        border: 0
+    }
+    .conversation {
         flex-direction: column-reverse;
+    }
+    .conversation .prediction {
+        flex-direction: column;
+    }
+    .conversation .prediction .text {
+        padding-left: 0;
+    }
+    .conversation .phone {
+        margin-top: 2em;
+        border-top: 1px solid #efefef;
+    }
+    .conversation>div {
+        margin: auto
+    }
+    .conversation .preview {
+        margin: auto
     }
     h2.wow {
         font-size: 1.6em;
